@@ -6,7 +6,8 @@ This project models a 3-floor corporate campus network designed for maximum upti
 
 The enterprise infrastructure connects 6 primary business departments across three floors, complete with a dedicated Server Room DMZ and Dual-ISP External Connectivity for redundant internet reachability.
 
-+-------------------------+
+```text
+                  +-------------------------+
                   |  Dual ISPs (ISP1/ISP2)  |
                   +------------+------------+
                                |
