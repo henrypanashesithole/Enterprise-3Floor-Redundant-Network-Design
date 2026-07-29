@@ -42,7 +42,7 @@ The enterprise infrastructure connects 6 primary business departments across thr
 
 8. Secure Enterprise WLAN: Departmental Wireless Access Points configured with WPA2-PSK (AES Encryption).
 
-# Network Addressing & VLAN Allocation
+### Network Addressing & VLAN Allocation
 
 | Floor Location | Department / Zone | VLAN ID | Subnet CIDR | Subnet Mask | Default Gateway | Allocated Hosts Range |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -53,7 +53,7 @@ The enterprise infrastructure connects 6 primary business departments across thr
 | **Floor 3** | ICT Department | VLAN 50 | `172.16.3.0/25` | `255.255.255.128` | `172.16.3.1` | `172.16.3.2 - 172.16.3.126` |
 | **Floor 3** | Server Room DMZ | VLAN 60 | `172.16.3.128/28` | `255.255.255.240` | `172.16.3.129` | `172.16.3.130 - 172.16.3.142` |
 
-# Server DMZ Infrastructure
+### Server DMZ Infrastructure
 
 | Server Host | Static IP Address | Subnet Mask | Function / Services Provided |
 | :--- | :--- | :--- | :--- |
