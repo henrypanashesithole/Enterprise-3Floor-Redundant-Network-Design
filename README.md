@@ -6,30 +6,23 @@ This project models a 3-floor corporate campus network designed for maximum upti
 
 The enterprise infrastructure connects 6 primary business departments across three floors, complete with a dedicated Server Room DMZ and Dual-ISP External Connectivity for redundant internet reachability.
 
-graph TD
-    ISP[Dual ISPs: ISP1 / ISP2] --> Core1[Core Router R1]
-    ISP --> Core2[Core Router R2]
-    Core1 <--> Core2
-    
-    Core1 --> MLSW1[Multilayer Switch 1]
-    Core2 --> MLSW2[Multilayer Switch 2]
-    MLSW1 <== Redundant Trunk ==> MLSW2
-    
-    subgraph Floor 1
-        MLSW1 --> V10[Sales & Marketing - VLAN 10]
-        MLSW1 --> V20[Human Resources - VLAN 20]
-    end
-    
-    subgraph Floor 2
-        MLSW1 --> V30[Finance & Accounts - VLAN 30]
-        MLSW2 --> V40[Administration - VLAN 40]
-    end
-    
-    subgraph Floor 3
-        MLSW2 --> V50[ICT Department - VLAN 50]
-        MLSW2 --> V60[Server Room DMZ - VLAN 60]
-    end
-
++--------+-------+                +--------+-------+
+     | Core Router R1 |                | Core Router R2 |
+     +--------+-------+                +--------+-------+
+              |                                 |
+              +----------------+----------------+
+                               |
+              +----------------+----------------+
+              |                                 |
+     +--------+-------+                +--------+-------+
+     | Multilayer SW1 |================| Multilayer SW2 |
+     +--------+-------+                +--------+-------+
+              |                                 |
+  +-----------+-----------+         +-----------+-----------+
+  |  Floor 1  |  Floor 2  |         |  Floor 3  | Server DMZ|
+  | VLAN 10/20| VLAN 30/40|         |  VLAN 50  |  VLAN 60  |
+  +-----------+-----------+         +-----------+-----------+
+  
 # Key Technologies & Architecture Implemented
 
 1. Hierarchical Network Design: Core, Distribution (Multilayer), and Access Layers for modular scaling.
