@@ -43,19 +43,21 @@ The enterprise infrastructure connects 6 primary business departments across thr
 8. Secure Enterprise WLAN: Departmental Wireless Access Points configured with WPA2-PSK (AES Encryption).
 
 # Network Addressing & VLAN Allocation
-Floor Location,Department / Zone,VLAN ID,Subnet CIDR,Subnet Mask,Default Gateway,Allocated Hosts Range
-Floor 1,Sales & Marketing,VLAN 10,172.16.1.0/25,255.255.255.128,172.16.1.1,172.16.1.2 - 172.16.1.126
-Floor 1,Human Resources (HR),VLAN 20,172.16.1.128/25,255.255.255.128,172.16.1.129,172.16.1.130 - 172.16.1.254
-Floor 2,Finance & Accounts,VLAN 30,172.16.2.0/25,255.255.255.128,172.16.2.1,172.16.2.2 - 172.16.2.126
-Floor 2,Administration,VLAN 40,172.16.2.128/25,255.255.255.128,172.16.2.129,172.16.2.130 - 172.16.2.254
-Floor 3,ICT Department,VLAN 50,172.16.3.0/25,255.255.255.128,172.16.3.1,172.16.3.2 - 172.16.3.126
-Floor 3,Server Room DMZ,VLAN 60,172.16.3.128/28,255.255.255.240,172.16.3.129,172.16.3.130 - 172.16.3.142
+| Floor Location | Department / Zone | VLAN ID | Subnet CIDR | Subnet Mask | Default Gateway | Allocated Hosts Range |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Floor 1** | Sales & Marketing | VLAN 10 | `172.16.1.0/25` | `255.255.255.128` | `172.16.1.1` | `172.16.1.2 - 172.16.1.126` |
+| **Floor 1** | Human Resources (HR) | VLAN 20 | `172.16.1.128/25` | `255.255.255.128` | `172.16.1.129` | `172.16.1.130 - 172.16.1.254` |
+| **Floor 2** | Finance & Accounts | VLAN 30 | `172.16.2.0/25` | `255.255.255.128` | `172.16.2.1` | `172.16.2.2 - 172.16.2.126` |
+| **Floor 2** | Administration | VLAN 40 | `172.16.2.128/25` | `255.255.255.128` | `172.16.2.129` | `172.16.2.130 - 172.16.2.254` |
+| **Floor 3** | ICT Department | VLAN 50 | `172.16.3.0/25` | `255.255.255.128` | `172.16.3.1` | `172.16.3.2 - 172.16.3.126` |
+| **Floor 3** | Server Room DMZ | VLAN 60 | `172.16.3.128/28` | `255.255.255.240` | `172.16.3.129` | `172.16.3.130 - 172.16.3.142` |
 
 #Server DMZ Infrastructure
-Server Host,Static IP Address,Subnet Mask,Function / Services Provided
-DNS Server,172.16.3.131,255.255.255.240,"Resolves Domain Names (e.g., [www.cisco.com](https://www.cisco.com) -> 172.16.3.131)"
-DHCP Server,172.16.3.132,255.255.255.240,"Hosts Central Pools (Sales&MarketingPool, HRPool, FinancePool, etc.)"
-Email Server,172.16.3.133,255.255.255.240,Enterprise SMTP / POP3 Messaging
+| Server Host | Static IP Address | Subnet Mask | Function / Services Provided |
+| :--- | :--- | :--- | :--- |
+| **DNS Server** | `172.16.3.131` | `255.255.255.240` | Resolves Domain Names (e.g., `www.cisco.com` -> `172.16.3.131`) |
+| **DHCP Server** | `172.16.3.132` | `255.255.255.240` | Hosts Central Pools (`Sales&MarketingPool`, `HRPool`, `FinancePool`, etc.) |
+| **Email Server** | `172.16.3.133` | `255.255.255.240` | Enterprise SMTP / POP3 Messaging |
 
 #Key Configuration Highlights
 1. Centralized Inter-VLAN SVI & DHCP Relay (Multilayer Switches)
